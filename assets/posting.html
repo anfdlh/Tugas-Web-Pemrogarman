@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Feed | CAMPNOMALI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fixed-top">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="../index.html">
+              <div class="bg-toon-yellow border border-2 border-dark rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 45px; height: 45px">
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <span>CAMP<span class="text-toon-blue">NOMALI</span></span>
+            </a>
+
+            <div class="ms-auto d-flex gap-2">
+              <button id="togglePostInfos" onclick="togglePostForm()" class="btn btn-toon btn-toon-primary shadow-sm" title="Buat Postingan">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span class="d-none d-md-inline ms-2">Buat Postingan</span>
+              </button>
+              <a href="../index.html" class="btn btn-toon btn-toon-light shadow-sm" title="Kembali">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="d-none d-md-inline ms-2">Kembali</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- FEED SECTION -->
+    <section class="py-5" style="margin-top: 100px; min-height: 100vh">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div id="postFormContainer" style="display: none" class="bg-white border border-4 border-dark rounded-5 p-4 mb-5 shadow-lg position-relative animation-slide-down">
+              <div class="position-absolute top-0 start-0 translate-middle bg-toon-blue text-white rounded-circle d-flex align-items-center justify-content-center border border-3 border-dark" style="width: 50px; height: 50px; font-size: 1.5rem; rotate: -15deg; margin-left: 20px; margin-top: 10px;">
+                ✎
+              </div>
+
+              <h3 class="fw-bold text-center mb-4">Buat Postingan Baru</h3>
+
+              <form id="postForm">
+                <div class="mb-3">
+                  <input class="form-control form-control-toon" id="postName" type="text" placeholder="Nama Kamu (cth: Bang Jago)" required />
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control form-control-toon" id="postText" rows="3" placeholder="Apa yang sedang seru hari ini?" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="postImage" class="form-label fw-bold">Upload Foto (Opsional)</label>
+                  <input class="form-control form-control-toon" type="file" id="postImage" accept="image/*" />
+                </div>  
+
+                <div class="d-flex gap-2">
+                  <button type="button" onclick="togglePostForm()" class="btn btn-toon btn-toon-light flex-fill">Batal</button>
+                  <button type="submit" class="btn btn-toon btn-toon-primary flex-fill"><i class="fa-solid fa-paper-plane me-2"></i> Posting</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- FEED STREAM -->
+            <div id="feedContainer">
+              <div id="emptyState" class="text-center py-5">
+                <div class="fs-1 mb-3">📭</div>
+                <h4 class="fw-bold text-secondary">Belum ada postingan nih.</h4>
+                <p class="text-muted">Jadilah yang pertama memposting sesi mabar!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Delete -->
+    <div id="deleteModal" class="delete-modal-overlay" style="display: none">
+      <div class="delete-modal-content text-center">
+        <div class="mb-3">
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x text-toon-red"></i>
+            <i class="fa-solid fa-trash fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+        <h4 class="fw-bold mb-2">Hapus Postingan?</h4>
+        <p class="text-secondary mb-4">Postingan yang dihapus gabisa balik lagi loh!</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-secondary rounded-pill px-4 fw-bold" onclick="closeDeleteModal()">Batal</button>
+          <button class="btn btn-toon btn-toon-primary rounded-pill px-4 fw-bold" id="confirmDeleteBtn">Ya, Hapus!</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

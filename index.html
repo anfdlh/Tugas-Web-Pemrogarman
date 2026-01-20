@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAMPNOMALI | Roblox Community</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css?v=1.1" />
+
+  </head>
+  <body>
+    <div class="fixed-top">
+      <div class="container">
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-custom">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="#">
+              <div class="bg-toon-yellow border border-2 border-dark rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 45px; height: 45px">
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <span>CAMP<span class="text-toon-blue">NOMALI</span></span>
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <i class="fa-solid fa-bars fs-2 text-dark"></i>
+            </button>
+
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="assets/about.html">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="assets/gallery.html">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link" href="assets/rules.html">Aturan</a></li>
+                <li class="nav-item"><a class="nav-link text-toon-red" href="assets/posting.html">✨ Community</a></li>
+              </ul>
+              <div class="d-lg-none mt-3 w-100 text-center">
+                <a href="https://discord.gg/hcxRcNvRvJ" target="_blank" class="btn btn-toon btn-toon-primary w-100">
+                  <i class="fa-brands fa-discord me-2"></i> Join Discord
+                </a>
+              </div>
+            </div>
+            <div class="d-none d-lg-block">
+              <a href="https://discord.gg/hcxRcNvRvJ" target="_blank" class="btn btn-toon btn-toon-primary">
+                <i class="fa-brands fa-discord me-2"></i> Join Discord
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- HERO SECTION - Added padding top to prevent overlap with fixed navbar -->
+    <header id="home" class="position-relative d-flex align-items-center pb-5" style="min-height: 100vh; padding-top: 8rem">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="d-inline-block bg-white border border-2 border-dark rounded-pill px-4 py-2 mb-4 rotate-n2 shadow-sm">
+              <span class="text-toon-red fw-bold"><i class="fa-solid fa-heart fa-beat me-2"></i> Komunitas Paling Seru!</span>
+            </div>
+
+            <h1 class="display-2 fw-bold mb-3" style="font-weight: 800">CAMP<span class="text-toon-blue">NOMALI</span></h1>
+            <p class="lead fs-3 mb-5 fw-medium text-secondary"><b>A Space to Grow, A Place to Belong.</b><br />Anti drama, full ketawa, dan pastinya seru banget!</p>
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+              <button onclick="copyIP()" class="btn btn-toon btn-toon-warning fs-5"> <i class="fa-solid fa-gamepad me-2"></i> Join Group</button>
+              <a href="#about" class="btn btn-toon btn-toon-light fs-5">Lihat Fitur <i class="fa-solid fa-arrow-down ms-2"></i></a>
+              <a href="https://anfdlh.vercel.app" class="btn btn-toon btn-toon-warning fs-5">Profile Saya <i class="fa-solid fa-user ms-2"></i></a>
+            </div>
+
+            <div class="mt-5 d-flex justify-content-center">
+              <div class="d-flex align-items-center">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="rounded-circle border border-3 border-white shadow bg-danger-subtle" width="60" height="60" style="margin-right: -15px; z-index: 1" />
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" class="rounded-circle border border-3 border-white shadow bg-info-subtle" width="60" height="60" style="margin-right: -15px; z-index: 2; margin-top: -10px" />
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Bob" class="rounded-circle border border-3 border-white shadow bg-warning-subtle" width="60" height="60" style="margin-right: -15px; z-index: 2; margin-top: -10px" />
+                <div id="discord-counter" class="rounded-circle border border-3 border-white shadow bg-toon-dark text-white d-flex align-items-center justify-content-center fw-bold ms-2" style="width: 60px; height: 60px; z-index: 0"> ... </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS SECTION -->
+    <section
+      class="py-5 bg-white border-top border-bottom border-4 border-dark">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-6">
+            <div class="fs-1 mb-2">👥</div>
+            <h2 id="discord-stats-number" class="fw-bold text-toon-blue">--</h2>
+            <p class="text-secondary fw-bold">Member Aktif</p>
+          </div>
+          <div class="col-6 col-md-6">
+            <div class="fs-1 mb-2">🔥</div>
+            <h2 class="fw-bold text-toon-red">24/7</h2>
+            <p class="text-secondary fw-bold">Selalu Rame</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / FEATURES -->
+    <section id="about" class="py-5 my-5">
+      <div class="container">
+        <div class="text-center mb-5 position-relative">
+          <h2 class="display-4 fw-bold d-inline-block position-relative z-1">KENAPA HARUS GABUNG? <div class="position-absolute start-0 bottom-0 w-100 bg-toon-yellow rounded-pill" style=" height: 15px; z-index: -1; transform: rotate(-1deg); bottom: 5px"></div></h2>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="card-toon p-4 rotate-n1">
+              <div class="icon-box bg-toon-yellow rotate-n2 text-dark">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <h3>Event & Giveaway</h3>
+              <p class="text-muted fs-5">Ikutin event mingguan kita, menangin quiz atau turnamen buat dapet hadiah!</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="card-toon p-4 rotate-1">
+              <div class="icon-box bg-toon-blue rotate-2">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <h3>Mabar Tiap Hari</h3>
+              <p class="text-muted fs-5">Gak punya temen main? Santai aja, di sini selalu ada yang siap diajak mabar apa aja.</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="card-toon p-4 rotate-n2">
+              <div class="icon-box bg-toon-red rotate-n3">
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <h3>Horror Lucu</h3>
+              <p class="text-muted fs-5">Kita suka main game horror kayak Doors, tapi malah jadi ngakak karena saling kaget.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-5 bg-toon-blue">
+      <div class="container">
+        <h2 class="display-4 fw-bold text-white text-center mb-5" style="text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2)">GALERI KESERUAN</h2>
+
+        <div id="gallery-container" class="row g-4">
+          <!-- Gambar-1 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/galeri-1.png" class="object-fit-cover gallery-image" style="cursor: pointer" alt="CDID" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di CDID</span>
+                <span class="fs-4"></span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-2 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/galeri-2.png" class="object-fit-cover" alt="CDID" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di CDID</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-3 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/galeri-3.png" class="object-fit-cover" alt="gunung" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di gunung</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-4 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/bantar.png" class="object-fit-cover" alt="bantar" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di bantar gebang</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-5 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/hutan.png" class="object-fit-cover" alt="hutan" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di hutan</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-6 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/indocamp.png" class="object-fit-cover" alt="indocamp" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di indocamp</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-7 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/indocamp-2.png" class="object-fit-cover" alt="indocamp" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di indocamp</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-8 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/kajiansubuh.png" class="object-fit-cover" alt="kajiansubuh" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto di kajian subuh</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+          <!-- Gambar-9 -->
+          <div class="col-md-4">
+            <div class="bg-white p-3 rounded-4 shadow-lg h-100 gallery-card">
+              <div class="ratio ratio-16x9 mb-3 border border-4 border-dark rounded-3 overflow-hidden">
+                <img src="assets/img/kolamrenang.png" class="object-fit-cover" alt="kolam renang" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold fs-5">Foto bersama di kolam renang</span>
+                <span class="fs-4">📸</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="gallery-pagination" class="d-flex justify-content-center mt-4 gap-2 d-md-none flex-wrap"></div>
+      </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <img class="lightbox-content" id="lightbox-img" alt="Gallery Image" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- RULES SECTION -->
+    <section id="rules" class="py-5 my-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold d-inline-block">ATURAN MAIN</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="bg-white border border-4 border-dark rounded-5 p-4 p-md-5 shadow position-relative">
+              <!-- Sticker -->
+              <div class="position-absolute top-0 end-0 translate-middle bg-toon-red text-white rounded-circle d-flex align-items-center justify-content-center fw-bold border border-4 border-dark rotate-2" style="width: 80px; height: 80px; font-size: 1.5rem">!!!</div>
+
+              <!-- Rule Items -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="bg-danger-subtle p-3 rounded-4 me-3 border border-2 border-danger-subtle fs-2">🤬</div>
+                <div>
+                  <h4 class="fw-bold">Dilarang Toxic</h4>
+                  <p class="text-secondary mb-0">Ngomong kasar = kick. Kita mau lingkungan yang ramah buat semua umur.</p>
+                </div>
+              </div>
+
+              <hr class="border-secondary opacity-25" />
+
+              <div class="d-flex align-items-start mb-4">
+                <div class="bg-info-subtle p-3 rounded-4 me-3 border border-2 border-info-subtle fs-2">👮</div>
+                <div>
+                  <h4 class="fw-bold">Hormati Admin</h4>
+                  <p class="text-secondary mb-0">Keputusan admin adalah mutlak. Jangan protes berlebihan ya!</p>
+                </div>
+              </div>
+
+              <hr class="border-secondary opacity-25" />
+
+              <div class="d-flex align-items-start">
+                <div class="bg-warning-subtle p-3 rounded-4 me-3 border border-2 border-warning-subtle fs-2">🚫</div>
+                <div>
+                  <h4 class="fw-bold">No Spamming</h4>
+                  <p class="text-secondary mb-0">Jangan spam chat atau kirim link yang aneh-aneh.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-4">
+      <div class="container">
+        <div class="row align-items-center mb-4 text-center text-md-start">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h2 class="fw-bold d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+              <i class="fa-solid fa-ghost text-toon-yellow"></i>
+              <span>CAMP<span class="text-toon-blue">NOMALI</span></span>
+            </h2>
+            <p class="text-white-50 fs-5">Komunitas Roblox Paling Happy!</p>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex justify-content-center justify-content-md-end gap-3">
+              <a href="https://discord.gg/hcxRcNvRvJ" class="social-btn"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://www.youtube.com/@campnomali" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="assets/instagram.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-top border-secondary pt-4 text-center text-white-50 fw-bold">&copy; 2025 - 2026 Campnomali. Dibuat dengan 💖 dan Bootstrap 5.</div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
